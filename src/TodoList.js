@@ -25,7 +25,9 @@ class TodoList extends Component {
     return (
       <div>
         <ul>
-          <li>Testando teclado</li>
+          {this.props.todos.map(todo => (
+            <li key={todo.id}>{todo.text}</li>
+          ))}
         </ul>
 
         <input
@@ -33,7 +35,7 @@ class TodoList extends Component {
           value={this.state.newTodoText}
           onChange={e => this.setState({ newTodoText: e.target.value })}
         />
-        <button onClick={this.addNewTodo}>add todo</button>
+        <button onClick={this.addNewTodo}>Novo todo</button>
       </div>
     );
   }
@@ -43,10 +45,10 @@ const mapStateToProps = state => ({
   todos: state.todos
 });
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch =>
   bindActionCreators(todoActions, dispatch);
-};
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps)(TodoList);
+  mapDispatchToProps
+)(TodoList);
