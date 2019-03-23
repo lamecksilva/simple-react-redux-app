@@ -1,6 +1,6 @@
 Simple React Redux App
 
-As the repository name says, it's a simpes app to use redux and react
+As the repository name says, it's a simple app to use redux and react
 
 ### Flux
 
