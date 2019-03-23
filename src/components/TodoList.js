@@ -6,17 +6,21 @@ class TodoList extends Component {
   constructor(props) {
     super(props);
 
+    // Set the state of component
     this.state = {
       newTodoText: ''
     };
   }
 
+  // Method to send action text to redux
   addNewTodo = () => {
+    // Actions stay in the props of component
     this.props.addTodo(this.state.newTodoText);
 
     this.setState({ newTodoText: '' });
   };
 
+  // Method to handle changes of input's
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -67,14 +71,17 @@ class TodoList extends Component {
   }
 }
 
+// Bring the todos in the redux state (store) to the component props
 const mapStateToProps = state => ({
   todos: state.todos
 });
 
+// Make actions to props
 const mapDispatchToProps = {
   addTodo: todoActions.addTodo
 };
 
+// Connecting component to redux
 export default connect(
   mapStateToProps,
   mapDispatchToProps

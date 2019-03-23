@@ -1,44 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple React Redux App
 
-## Available Scripts
+As the repository name says, it's a simpes app to use redux and react
 
-In the project directory, you can run:
+### Flux
 
-### `npm start`
+"Flux is the application architecture that Facebook uses for building client-side web applications." (Facebook)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Flux is an architecture to build client-side applications, where the 4 largest parts are:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- **Store**: Stores contain the application state and logic
 
-### `npm test`
+- **Dispatch**: The central hub that manages all data flow in a Flux application
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Actions**: Methods for trigger a dispatch to the stores, including payload of data
 
-### `npm run build`
+- **View**: Can be a React Component, or others.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Photo for example:
+![image](https://user-images.githubusercontent.com/31391753/54871595-6d41b780-4d95-11e9-87b6-fd61f95b88c7.png)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### And in this application, who is who?
 
-### `npm run eject`
+In this application, we use Redux, which implements the flux architecture.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Here you can compare Flux and Redux, and their nominations
+![image](https://user-images.githubusercontent.com/31391753/54871696-4dab8e80-4d97-11e9-913a-fca07efc6b61.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In the app:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### **State**:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![image](https://user-images.githubusercontent.com/31391753/54871719-de826a00-4d97-11e9-8a88-5958b7dbb706.png)
 
-## Learn More
+- Store = State
+- Reducer = todos
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **Action**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![image](https://user-images.githubusercontent.com/31391753/54871756-4769e200-4d98-11e9-8c93-9fdcf2cfc3bc.png)
+
+- Type = Type of the action
+- Payload = Data from action to reducer
+
+---
+
+#### Conclusion
+
+Using the flux architecture helps a lot, mainly the part of accessing the state of the application as a whole, not only of separate components, using actions to make changes in the state, and React also, which facilitates the development of web applications.
+
+Any doubts, make an issue, and feel free to make pull requests, thanks for the attention. :grin:
