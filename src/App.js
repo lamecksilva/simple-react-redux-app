@@ -1,16 +1,15 @@
-import React, { Component } from "react";
-import "./App.css";
-import { Provider } from "react-redux";
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 
-import store from "./store";
-import TodoList from "./TodoList";
-import Counter from "./Counter";
+import store from './store';
+import TodoList from './components/TodoList';
+import Counter from './components/Counter';
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
+        <div className="container">
           <TodoList />
           <Counter />
         </div>
